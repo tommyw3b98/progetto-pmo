@@ -1,0 +1,16 @@
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.exe
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.deps.json
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.runtimeconfig.json
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.runtimeconfig.dev.json
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.dll
+C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.pdb
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csprojAssemblyReference.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.Properties.Resources.resources
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csproj.GenerateResource.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.AssemblyInfoInputs.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.AssemblyInfo.cs
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csproj.CoreCompileInputs.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.dll
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.pdb
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.genruntimeconfig.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.tomatoUI.resources
