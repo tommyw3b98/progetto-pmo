@@ -68,5 +68,15 @@ namespace tomato.Properties {
                 return ResourceManager.GetStream("ding", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        /// </summary>
+        internal static System.Drawing.Icon Graphicloads_Food_Drink_Tomato {
+            get {
+                object obj = ResourceManager.GetObject("Graphicloads_Food_Drink_Tomato", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

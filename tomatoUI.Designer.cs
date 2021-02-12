@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tomatoUI));
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
             this.timeLeftText = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             // 
             // stopButton
             // 
+            this.stopButton.Enabled = false;
             this.stopButton.Location = new System.Drawing.Point(420, 241);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(150, 100);
@@ -174,6 +176,7 @@
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "tomatoUI";
             this.Text = "tomato 🍅";

@@ -9,7 +9,7 @@ namespace tomato
     {
         readonly Context pomodoro;
         protected int secondsLeft;
-        private const int FOCUS_TIME = 10;
+        private const int FOCUS_TIME = 1500;
 
         public FocusTimer(Context p)
         {

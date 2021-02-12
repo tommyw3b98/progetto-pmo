@@ -49,5 +49,10 @@ namespace tomato
                 longRelaxCounter.Enabled = false;
             }
         }
+
+        private void settingsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

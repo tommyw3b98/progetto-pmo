@@ -14,8 +14,8 @@ namespace tomato
         public CustomRelaxTimer(Context p, int time, int longTime) : base(p)
         {
             pomodoro = p;
-            relaxTime = time;
-            longRelaxTime = longTime;
+            relaxTime = time * 60;
+            longRelaxTime = longTime * 60;
             secondsLeft = relaxTime;
         }
 

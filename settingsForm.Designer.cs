@@ -43,7 +43,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(117, 176);
+            this.applyButton.Location = new System.Drawing.Point(58, 176);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(94, 29);
             this.applyButton.TabIndex = 2;
@@ -54,7 +54,7 @@
             // isCustomCheckBox
             // 
             this.isCustomCheckBox.AutoSize = true;
-            this.isCustomCheckBox.Location = new System.Drawing.Point(12, 12);
+            this.isCustomCheckBox.Location = new System.Drawing.Point(15, 12);
             this.isCustomCheckBox.Name = "isCustomCheckBox";
             this.isCustomCheckBox.Size = new System.Drawing.Size(181, 24);
             this.isCustomCheckBox.TabIndex = 3;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 217);
+            this.ClientSize = new System.Drawing.Size(210, 217);
             this.ControlBox = false;
             this.Controls.Add(this.longRelaxTimeText);
             this.Controls.Add(this.longRelaxCounter);
@@ -157,8 +157,10 @@
             this.Controls.Add(this.focusCounter);
             this.Controls.Add(this.isCustomCheckBox);
             this.Controls.Add(this.applyButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "settingsForm";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.settingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.focusCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaxCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.longRelaxCounter)).EndInit();

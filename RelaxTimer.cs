@@ -10,8 +10,8 @@ namespace tomato
     {
         readonly Context pomodoro;
         protected int secondsLeft;
-        private const int RELAX_TIME = 5;
-        private const int LONG_RELAX_TIME = 15;
+        private const int RELAX_TIME = 300;
+        private const int LONG_RELAX_TIME = 900;
 
         public RelaxTimer(Context p)
         {

@@ -12,7 +12,7 @@ namespace tomato
         public CustomFocusTimer(Context p, int time) :base(p)
         {
             pomodoro = p;
-            focusTime = time;
+            focusTime = time * 60;
             secondsLeft = focusTime;
         }
 

@@ -26,10 +26,7 @@ namespace tomato
         private void Form1_Load(object sender, EventArgs e)
         {
             p = Context.GetInstance();
-            timeLeftText.Text = p.GetCurrentTime();
-            complete.Text = "Complete: " + p.PomodoriCompleted;
-            left.Text = "Left: " + p.PomodoriLeft;
-            currentStatusText.Text = p.GetCurrentState();
+            UpdateUI();
         }
 
         public void UpdateUI()
@@ -43,28 +40,36 @@ namespace tomato
         private void StartButton_Click(object sender, EventArgs e)
         {
             timer1.Start();
-            //disattiva il box numerico finché il timer non è resettato
+            startButton.Enabled = false;
+            startButton.Text = "START";
+            stopButton.Enabled = true;
+
             counter.Enabled = false;
-            //disattiva il tasto delle impostazioni finché il timer non è resettato
             settingsButton.Enabled = false;
         }
 
         private void StopButton_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            startButton.Enabled = true;
+            startButton.Text = "RESUME";
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if (p.IsActive == true)
+            if (p.IsActive)
             {
                 p.Update();
+
                 timeLeftText.Text = p.GetCurrentTime();
                 currentStatusText.Text = p.GetCurrentState();
             }
-            else
+            else //Fine sessione
             {
                 timer1.Stop();
+                startButton.Enabled = false;
+                stopButton.Enabled = false;
+
                 SystemSounds.Asterisk.Play();
                 MessageBox.Show("Session complete!\nTo start another session click on reset or reboot the app.");
             }
@@ -76,10 +81,15 @@ namespace tomato
         {
             counter.Enabled = true;
             settingsButton.Enabled = true;
+            startButton.Enabled = true;
+            stopButton.Enabled = false;
+            startButton.Text = "START";
 
             timer1.Stop();
+
             p.Reset();
             p.PomodoriLeft = Decimal.ToInt32(counter.Value);
+
             UpdateUI();
         }
 
