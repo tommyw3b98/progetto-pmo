@@ -6,20 +6,20 @@ using System.Media;
 namespace tomato
 {
     //Stato del timer: RELAX
-    class RelaxTimer : IPomodoroState
+    public class RelaxTimer : ITimerState
     {
-        readonly PomodoroContext pomodoro;
-        private int secondsLeft;
+        readonly Context pomodoro;
+        protected int secondsLeft;
         private const int RELAX_TIME = 5;
         private const int LONG_RELAX_TIME = 15;
 
-        public RelaxTimer(PomodoroContext p)
+        public RelaxTimer(Context p)
         {
             this.pomodoro = p;
             secondsLeft = RELAX_TIME;
         }
 
-        public void Ready()
+        public virtual void Ready()
         {
             //Ogni 4 cicli la pausa è più lunga
             if (pomodoro.PomodoriCompleted % 4 == 0)
@@ -28,7 +28,14 @@ namespace tomato
                 secondsLeft = RELAX_TIME;
         }
 
-        public void Update()
+        protected void Ring()
+        {
+            System.IO.Stream str = Properties.Resources.ding;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+        }
+
+        public virtual void Update()
         {
             if (this.secondsLeft > 0)
             {
@@ -36,22 +43,18 @@ namespace tomato
             }
             else
             {
-                //A ogni cambio di stato suona un campanello
-                //TODO: sistemare in un metodo
-                System.IO.Stream str = Properties.Resources.ding;
-                SoundPlayer snd = new SoundPlayer(str);
-                snd.Play();
 
+                Ring();
                 this.pomodoro.SetNewState(pomodoro.GetFocusState());
                 this.pomodoro.Ready();
             }
         }
 
-        public void Reset()
+        public virtual void Reset()
         {
             this.pomodoro.SetNewState(pomodoro.GetFocusState());
-            if (pomodoro.GetActive() == false)
-                pomodoro.SetActive(true);
+            if (pomodoro.IsActive == false)
+                pomodoro.IsActive = true;
             this.pomodoro.Ready();
         }
 

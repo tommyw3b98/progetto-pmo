@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 using System.Media;
 
 
@@ -17,7 +16,7 @@ namespace tomato
     public partial class tomatoUI : Form
     {
         
-        private PomodoroContext p;
+        private Context p;
         
         public tomatoUI()
         {
@@ -26,19 +25,28 @@ namespace tomato
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            p = PomodoroContext.GetInstance();
+            p = Context.GetInstance();
             timeLeftText.Text = p.GetCurrentTime();
             complete.Text = "Complete: " + p.PomodoriCompleted;
             left.Text = "Left: " + p.PomodoriLeft;
             currentStatusText.Text = p.GetCurrentState();
         }
 
+        public void UpdateUI()
+        {
+            complete.Text = "Complete: " + p.PomodoriCompleted;
+            left.Text = "Left: " + p.PomodoriLeft;
+            timeLeftText.Text = p.GetCurrentTime();
+            currentStatusText.Text = p.GetCurrentState();
+        }
+
         private void StartButton_Click(object sender, EventArgs e)
         {
             timer1.Start();
-
             //disattiva il box numerico finché il timer non è resettato
             counter.Enabled = false;
+            //disattiva il tasto delle impostazioni finché il timer non è resettato
+            settingsButton.Enabled = false;
         }
 
         private void StopButton_Click(object sender, EventArgs e)
@@ -48,8 +56,7 @@ namespace tomato
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Debug.WriteLine("Sessions left: " + p.PomodoriLeft);
-            if (p.GetActive() == true)
+            if (p.IsActive == true)
             {
                 p.Update();
                 timeLeftText.Text = p.GetCurrentTime();
@@ -59,7 +66,7 @@ namespace tomato
             {
                 timer1.Stop();
                 SystemSounds.Asterisk.Play();
-                MessageBox.Show("Session complete!");                
+                MessageBox.Show("Session complete!\nTo start another session click on reset or reboot the app.");
             }
             complete.Text = "Complete: " + p.PomodoriCompleted;
             left.Text = "Left: " + p.PomodoriLeft;
@@ -68,21 +75,24 @@ namespace tomato
         private void ResetButton_Click(object sender, EventArgs e)
         {
             counter.Enabled = true;
+            settingsButton.Enabled = true;
+
             timer1.Stop();
             p.Reset();
             p.PomodoriLeft = Decimal.ToInt32(counter.Value);
-            p.PomodoriCompleted = 0;
-            complete.Text = "Complete: " + p.PomodoriCompleted;
-            left.Text = "Left " + p.PomodoriLeft;
-            timeLeftText.Text = p.GetCurrentTime();
-            currentStatusText.Text = p.GetCurrentState();
+            UpdateUI();
         }
 
         private void PomodoriCounter_ValueChanged(object sender, EventArgs e)
         {
             p.PomodoriLeft = Decimal.ToInt32(counter.Value);
-            left.Text = "Left: " + counter.Value.ToString();
-            Debug.WriteLine("new value:" + p.PomodoriLeft);
+            left.Text = "Left: " + p.PomodoriLeft;
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            settingsForm settingsUI = new settingsForm(p, this);
+            settingsUI.ShowDialog();
         }
     }
 }

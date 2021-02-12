@@ -39,12 +39,13 @@
             this.pomodoriText = new System.Windows.Forms.Label();
             this.counter = new System.Windows.Forms.NumericUpDown();
             this.complete = new System.Windows.Forms.Label();
+            this.settingsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.counter)).BeginInit();
             this.SuspendLayout();
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(14, 241);
+            this.startButton.Location = new System.Drawing.Point(12, 241);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(150, 100);
             this.startButton.TabIndex = 0;
@@ -54,11 +55,11 @@
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(422, 241);
+            this.stopButton.Location = new System.Drawing.Point(420, 241);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(150, 100);
             this.stopButton.TabIndex = 0;
-            this.stopButton.Text = "STOP";
+            this.stopButton.Text = "PAUSE";
             this.stopButton.UseVisualStyleBackColor = true;
             this.stopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
@@ -66,7 +67,7 @@
             // 
             this.timeLeftText.AutoSize = true;
             this.timeLeftText.Font = new System.Drawing.Font("Microsoft Sans Serif", 49.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.timeLeftText.Location = new System.Drawing.Point(162, 82);
+            this.timeLeftText.Location = new System.Drawing.Point(168, 82);
             this.timeLeftText.Name = "timeLeftText";
             this.timeLeftText.Size = new System.Drawing.Size(247, 95);
             this.timeLeftText.TabIndex = 1;
@@ -74,7 +75,7 @@
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(210, 241);
+            this.resetButton.Location = new System.Drawing.Point(216, 241);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(150, 100);
             this.resetButton.TabIndex = 2;
@@ -97,7 +98,7 @@
             this.currentStatusText.AutoSize = true;
             this.currentStatusText.Enabled = false;
             this.currentStatusText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.currentStatusText.Location = new System.Drawing.Point(237, 177);
+            this.currentStatusText.Location = new System.Drawing.Point(243, 177);
             this.currentStatusText.Name = "currentStatusText";
             this.currentStatusText.Size = new System.Drawing.Size(97, 36);
             this.currentStatusText.TabIndex = 4;
@@ -120,7 +121,7 @@
             // 
             // counter
             // 
-            this.counter.Location = new System.Drawing.Point(119, 7);
+            this.counter.Location = new System.Drawing.Point(117, 7);
             this.counter.Minimum = new decimal(new int[] {
             1,
             0,
@@ -145,6 +146,16 @@
             this.complete.TabIndex = 7;
             this.complete.Text = "Complete:";
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(244, 7);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(94, 29);
+            this.settingsButton.TabIndex = 8;
+            this.settingsButton.Text = "settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
             // tomatoUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -152,6 +163,7 @@
             this.BackColor = System.Drawing.Color.Brown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(582, 353);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.complete);
             this.Controls.Add(this.counter);
             this.Controls.Add(this.pomodoriText);
@@ -184,6 +196,7 @@
         private System.Windows.Forms.Label pomodoriText;
         private System.Windows.Forms.NumericUpDown counter;
         private System.Windows.Forms.Label complete;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
 

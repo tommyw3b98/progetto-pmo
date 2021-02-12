@@ -5,24 +5,31 @@ using System.Media;
 namespace tomato
 {
     //Stato del timer: FOCUS
-    public class FocusTimer : IPomodoroState
+    public class FocusTimer : ITimerState
     {
-        readonly PomodoroContext pomodoro;
-        private int secondsLeft;
+        readonly Context pomodoro;
+        protected int secondsLeft;
         private const int FOCUS_TIME = 10;
 
-        public FocusTimer(PomodoroContext p)
+        public FocusTimer(Context p)
         {
             this.pomodoro = p;
             this.secondsLeft = FOCUS_TIME;
         }
 
-        public void Ready()
+        public virtual void Ready()
         {
             this.secondsLeft = FOCUS_TIME;
         }
+
+        protected void Ring()
+        {
+            System.IO.Stream str = Properties.Resources.ding;
+            SoundPlayer snd = new SoundPlayer(str);
+            snd.Play();
+        }
         
-        public void Update()
+        public virtual void Update()
         {
             if (this.secondsLeft > 0)
             {
@@ -35,23 +42,19 @@ namespace tomato
                 if (this.pomodoro.PomodoriLeft > 0)
                 {
                     //A ogni cambio di stato suona un campanello
-                    //TODO: sistemare in un metodo
-                    System.IO.Stream str = Properties.Resources.ding;
-                    SoundPlayer snd = new SoundPlayer(str);
-                    snd.Play();
-
+                    Ring();
                     this.pomodoro.SetNewState(pomodoro.GetRelaxState());
                     this.pomodoro.Ready();
                 }
-             else this.pomodoro.SetActive(false);
+                else this.pomodoro.IsActive = false;
             }
         }
 
         public void Reset()
         {
-            this.secondsLeft = FOCUS_TIME;
-            if (pomodoro.GetActive() == false)
-                pomodoro.SetActive(true);
+            Ready();
+            if (pomodoro.IsActive == false)
+                pomodoro.IsActive = true;
         }
 
         public string GetCurrentTime()
