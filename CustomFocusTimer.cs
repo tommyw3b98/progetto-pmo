@@ -21,6 +21,11 @@ namespace tomato
             this.secondsLeft = focusTime;
         }
 
+        public override int GetStartingSeconds()
+        {
+            return focusTime;
+        }
+
         public override void Update()
         {
             if (this.secondsLeft > 0)

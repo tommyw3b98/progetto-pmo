@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tomatoUI));
             this.startButton = new System.Windows.Forms.Button();
             this.stopButton = new System.Windows.Forms.Button();
             this.timeLeftText = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.counter = new System.Windows.Forms.NumericUpDown();
             this.complete = new System.Windows.Forms.Label();
             this.settingsButton = new System.Windows.Forms.Button();
+            this.StatsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.counter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,13 +150,23 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(244, 7);
+            this.settingsButton.Location = new System.Drawing.Point(216, 12);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(94, 29);
+            this.settingsButton.Size = new System.Drawing.Size(64, 29);
             this.settingsButton.TabIndex = 8;
-            this.settingsButton.Text = "settings";
+            this.settingsButton.Text = "config";
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
+            // StatsButton
+            // 
+            this.StatsButton.Location = new System.Drawing.Point(302, 12);
+            this.StatsButton.Name = "StatsButton";
+            this.StatsButton.Size = new System.Drawing.Size(64, 29);
+            this.StatsButton.TabIndex = 9;
+            this.StatsButton.Text = "stats";
+            this.StatsButton.UseVisualStyleBackColor = true;
+            this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
             // 
             // tomatoUI
             // 
@@ -165,6 +175,7 @@
             this.BackColor = System.Drawing.Color.Brown;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(582, 353);
+            this.Controls.Add(this.StatsButton);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.complete);
             this.Controls.Add(this.counter);
@@ -176,7 +187,6 @@
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "tomatoUI";
             this.Text = "tomato 🍅";
@@ -200,6 +210,7 @@
         private System.Windows.Forms.NumericUpDown counter;
         private System.Windows.Forms.Label complete;
         private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button StatsButton;
     }
 }
 

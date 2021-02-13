@@ -22,5 +22,10 @@ namespace tomato
             string s = "dummy string";
             return s;
         }
+        public int GetStartingSeconds()
+        {
+            int seconds = 0;
+            return seconds;
+        }
     }
 }

@@ -72,6 +72,12 @@ namespace tomato
            return s; 
         }
 
+        public int GetStartingSeconds()
+        {
+            int seconds =  currentState.GetStartingSeconds();
+            return seconds;
+        }
+
         public string GetCurrentState()
         {
             string s = currentState.GetCurrentState();
@@ -93,6 +99,4 @@ namespace tomato
         public ITimerState GetCustomFocusState() { return customFocus; }
         public ITimerState GetCustomRelaxState() { return customRelax; }
     }
-
-    
 }

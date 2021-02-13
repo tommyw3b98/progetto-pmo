@@ -42,6 +42,11 @@ namespace tomato
             }
         }
 
+        public override int GetStartingSeconds()
+        {
+            return relaxTime;
+        }
+
         public override void Reset()
         {
             this.pomodoro.SetNewState(pomodoro.GetCustomFocusState());

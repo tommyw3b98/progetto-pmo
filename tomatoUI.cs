@@ -17,6 +17,7 @@ namespace tomato
     {
         
         private Context p;
+        private StatsManager sManager;
         
         public tomatoUI()
         {
@@ -26,6 +27,7 @@ namespace tomato
         private void Form1_Load(object sender, EventArgs e)
         {
             p = Context.GetInstance();
+            sManager = new StatsManager(p);
             UpdateUI();
         }
 
@@ -39,6 +41,10 @@ namespace tomato
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            //se nuova sessione inizia  a registrare le statistiche
+            if(startButton.Text != "RESUME")
+                sManager.StartSessionRecording();
+
             timer1.Start();
             startButton.Enabled = false;
             startButton.Text = "START";
@@ -66,6 +72,9 @@ namespace tomato
             }
             else //Fine sessione
             {
+                //scrivi statistiche della sessione su file
+                sManager.RecordSession();
+
                 timer1.Stop();
                 startButton.Enabled = false;
                 stopButton.Enabled = false;
@@ -103,6 +112,12 @@ namespace tomato
         {
             settingsForm settingsUI = new settingsForm(p, this);
             settingsUI.ShowDialog();
+        }
+
+        private void StatsButton_Click(object sender, EventArgs e)
+        {
+            statsForm stats = new statsForm(sManager);
+            stats.ShowDialog();
         }
     }
 }

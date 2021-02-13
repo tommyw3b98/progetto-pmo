@@ -6,6 +6,7 @@ C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.dll
 C:\Users\tommy\source\repos\tomato\bin\Debug\netcoreapp3.1\tomato.pdb
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.Properties.Resources.resources
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.settingsForm.resources
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.statsForm.resources
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.tomatoUI.resources
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csproj.GenerateResource.cache
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.AssemblyInfoInputs.cache
@@ -14,3 +15,4 @@ C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csproj.CoreCom
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.dll
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.pdb
 C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.genruntimeconfig.cache
+C:\Users\tommy\source\repos\tomato\obj\Debug\netcoreapp3.1\tomato.csprojAssemblyReference.cache

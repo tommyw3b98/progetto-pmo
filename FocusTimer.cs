@@ -9,7 +9,7 @@ namespace tomato
     {
         readonly Context pomodoro;
         protected int secondsLeft;
-        private const int FOCUS_TIME = 1500;
+        private const int FOCUS_TIME =  1500;
 
         public FocusTimer(Context p)
         {
@@ -64,6 +64,11 @@ namespace tomato
             int seconds = secondsLeft - (minutes * 60);
             currentTime = minutes.ToString("00") + ":" + seconds.ToString("00");
             return currentTime;
+        }
+
+        public virtual int GetStartingSeconds()
+        {
+            return FOCUS_TIME;
         }
 
         public string GetCurrentState()

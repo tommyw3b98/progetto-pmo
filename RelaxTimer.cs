@@ -68,6 +68,11 @@ namespace tomato
             return currentTime;
         }
 
+        public virtual int GetStartingSeconds()
+        {
+            return RELAX_TIME;
+        }
+
         public string GetCurrentState()
         {
             return "relax";

@@ -7,6 +7,9 @@
     <Compile Update="settingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="statsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="tomatoUI.cs">
       <SubType>Form</SubType>
     </Compile>
