@@ -1,9 +1,11 @@
 Progetto di programmazione a oggetti in C#
 
 ------------------------------------------
+
 Nome: Tommaso Cicco
 
 Matricola: 282783
+
 ------------------------------------------
 
 Specifica: 
