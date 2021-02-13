@@ -14,5 +14,6 @@ Programma con interfaccia grafica che implementa la tecnica di gestione del temp
 
 Features:
 
-*Intervalli di tempo personalizzabili.
-*Statistiche di base sulle sessioni di lavoro precedenti.
+* Intervalli di tempo personalizzabili.
+
+* Statistiche di base sulle sessioni di lavoro precedenti.
