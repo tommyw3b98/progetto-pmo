@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tomato
+﻿namespace tomato
 {
     class SettingsManager
     {
         public int CustomRelaxTime { get; set; }
         public int CustomFocusime { get; set; }
         public int CustomLongRelaxTime { get; set; }
+
         private readonly Context pomodoro;
 
         public SettingsManager(Context p)

@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
 using System.Data;
+using System.IO;
 
 namespace tomato
 {
     public class StatsManager
     {
-        private Context pomodoro;
+        private readonly Context pomodoro;
         private int pomodoroTime; //durata in secondi di un intervallo di focus (1500 se default)
         private int intervalsNum; //numero di pomodori per la sessione corrente
-        private string filePath = AppDomain.CurrentDomain.BaseDirectory + @"stats.txt";
+        private readonly string filePath = AppDomain.CurrentDomain.BaseDirectory + "stats.txt";
         private const string COLUMNS_NAME = "Date|Total focus time";
 
         public StatsManager(Context p)
@@ -82,7 +80,7 @@ namespace tomato
 
         public void ClearStats()
         {
-            File.WriteAllText(filePath, String.Empty);
+            File.WriteAllText(filePath, string.Empty);
             using StreamWriter strw = File.AppendText(filePath);
             strw.WriteLine(COLUMNS_NAME);
         }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tomato
+﻿namespace tomato
 {
     public class CustomFocusTimer : FocusTimer
     {
         private readonly Context pomodoro;
         private readonly int focusTime;
 
-        public CustomFocusTimer(Context p, int time) :base(p)
+        public CustomFocusTimer(Context p, int time) : base(p)
         {
             pomodoro = p;
             focusTime = time * 60;

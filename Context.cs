@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
-
-namespace tomato
+﻿namespace tomato
 {
     //Classe che tiene traccia dello stato del timer attivo
     public class Context
     {
         private readonly ITimerState focus;
         private readonly ITimerState relax;
-        private  ITimerState customFocus;
-        private  ITimerState customRelax;
+        private ITimerState customFocus;
+        private ITimerState customRelax;
         private ITimerState currentState;
 
         private static Context instance;
-       
+
         public bool IsActive { get; set; }
+        public bool ActiveSession { get; set; }
         public int PomodoriLeft { get; set; }
         public int PomodoriCompleted { get; set; }
-        public string StatusText { get; set; }
 
         private Context()
         {
@@ -62,19 +57,20 @@ namespace tomato
 
         public void Reset()
         {
+            ActiveSession = false;
             currentState.Reset();
             PomodoriCompleted = 0;
         }
 
         public string GetCurrentTime()
         {
-           string s = currentState.GetCurrentTime();
-           return s; 
+            string s = currentState.GetCurrentTime();
+            return s;
         }
 
         public int GetStartingSeconds()
         {
-            int seconds =  currentState.GetStartingSeconds();
+            int seconds = currentState.GetStartingSeconds();
             return seconds;
         }
 

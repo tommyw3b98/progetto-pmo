@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tomato
+﻿namespace tomato
 {
     public class CustomRelaxTimer : RelaxTimer
     {
         private readonly int relaxTime;
-        private readonly int  longRelaxTime;
-        private readonly Context  pomodoro;
-        
-        
+        private readonly int longRelaxTime;
+        private readonly Context pomodoro;
+
         public CustomRelaxTimer(Context p, int time, int longTime) : base(p)
         {
             pomodoro = p;

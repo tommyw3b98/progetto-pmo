@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Media;
+﻿using System.Media;
 namespace tomato
 {
     //Stato del timer: FOCUS
@@ -9,7 +6,7 @@ namespace tomato
     {
         readonly Context pomodoro;
         protected int secondsLeft;
-        private const int FOCUS_TIME =  1500;
+        private const int FOCUS_TIME = 1500;
 
         public FocusTimer(Context p)
         {
@@ -28,7 +25,7 @@ namespace tomato
             SoundPlayer snd = new SoundPlayer(str);
             snd.Play();
         }
-        
+
         public virtual void Update()
         {
             if (this.secondsLeft > 0)

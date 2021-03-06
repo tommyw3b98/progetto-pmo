@@ -1,32 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Media;
-
-
+using System.Windows.Forms;
 
 namespace tomato
 {
-    public partial class tomatoUI : Form
+    public partial class TomatoUI : Form
     {
-        
         private Context p;
         private StatsManager sManager;
-        
-        public tomatoUI()
+
+        public TomatoUI()
         {
             InitializeComponent();
+            this.Icon = tomato.Properties.Resources.Graphicloads_Food_Drink_Tomato;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             p = Context.GetInstance();
+            p.ActiveSession = false;
             sManager = new StatsManager(p);
             UpdateUI();
         }
@@ -42,8 +34,11 @@ namespace tomato
         private void StartButton_Click(object sender, EventArgs e)
         {
             //se nuova sessione inizia  a registrare le statistiche
-            if(startButton.Text != "RESUME")
+            if (p.ActiveSession == false)
+            {
+                p.ActiveSession = true;
                 sManager.StartSessionRecording();
+            }
 
             timer1.Start();
             startButton.Enabled = false;
@@ -73,6 +68,7 @@ namespace tomato
             else //Fine sessione
             {
                 //scrivi statistiche della sessione su file
+                p.ActiveSession = false;
                 sManager.RecordSession();
 
                 timer1.Stop();
@@ -80,7 +76,7 @@ namespace tomato
                 stopButton.Enabled = false;
 
                 SystemSounds.Asterisk.Play();
-                MessageBox.Show("Session complete!\nTo start another session click on reset or reboot the app.");
+                MessageBox.Show("Session complete!\nTo start another session click on reset.");
             }
             complete.Text = "Complete: " + p.PomodoriCompleted;
             left.Text = "Left: " + p.PomodoriLeft;
@@ -97,26 +93,26 @@ namespace tomato
             timer1.Stop();
 
             p.Reset();
-            p.PomodoriLeft = Decimal.ToInt32(counter.Value);
+            p.PomodoriLeft = decimal.ToInt32(counter.Value);
 
             UpdateUI();
         }
 
         private void PomodoriCounter_ValueChanged(object sender, EventArgs e)
         {
-            p.PomodoriLeft = Decimal.ToInt32(counter.Value);
+            p.PomodoriLeft = decimal.ToInt32(counter.Value);
             left.Text = "Left: " + p.PomodoriLeft;
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            settingsForm settingsUI = new settingsForm(p, this);
+            SettingsForm settingsUI = new SettingsForm(p, this);
             settingsUI.ShowDialog();
         }
 
         private void StatsButton_Click(object sender, EventArgs e)
         {
-            statsForm stats = new statsForm(sManager);
+            StatsForm stats = new StatsForm(sManager);
             stats.ShowDialog();
         }
     }

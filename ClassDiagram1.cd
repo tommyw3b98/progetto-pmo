@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="tomato.Context">
+    <Position X="11.25" Y="6.25" Width="5.25" />
+    <TypeIdentifier>
+      <HashCode>AAwAAABQAQAADAEAMEACAAAABAJAEAIEAAAACABgACY=</HashCode>
+      <FileName>Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="tomato.CustomFocusTimer">
+    <Position X="4.75" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACAAAAAEAAAAAAAAAAAAAAAAECAAAAAAAAAA=</HashCode>
+      <FileName>CustomFocusTimer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="tomato.CustomRelaxTimer">
+    <Position X="0.75" Y="10.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAACAAABAEAAAAAAAgAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>CustomRelaxTimer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="tomato.FocusTimer">
+    <Position X="5.25" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQCAAABAEAAAAABAAAgAIAAAIEAAAAAAAAAAA=</HashCode>
+      <FileName>FocusTimer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="tomato.RelaxTimer">
+    <Position X="1.25" Y="6.25" Width="2" />
+    <AssociationLine Name="pomodoro" Type="tomato.Context" ManuallyRouted="true">
+      <Path>
+        <Point X="3.25" Y="9.471" />
+        <Point X="6.167" Y="9.471" Type="JumpStart" />
+        <Point X="6.333" Y="9.471" Type="JumpEnd" />
+        <Point X="11.25" Y="9.471" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAEAAQCAAABAEAAIAABAAAAAIAAAIEAAAAAAAAAAA=</HashCode>
+      <FileName>RelaxTimer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="tomato.StatsManager">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAQCJAEASAAAAAAAAAAAAAAAEAAAAQAAAAAAGA=</HashCode>
+      <FileName>StatsManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="tomato.SettingsManager">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAACAAAAAAgAAAIAAAEAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>SettingsManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pomodoro" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="tomato.StatsForm" Collapsed="true">
+    <Position X="20.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAgAAAAAACAAAACAAgAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="tomato.SettingsForm" Collapsed="true">
+    <Position X="18" Y="9.75" Width="1.5" />
+    <Members>
+      <Field Name="s" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACABAAAIAACABQACJEAAAAAAgIAAAgCAAAA=</HashCode>
+      <FileName>SettingsForm.cs</FileName>
+      <NewMemberFileName>settingsForm.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="s" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="tomato.TomatoUI" Collapsed="true">
+    <Position X="8.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIgAAAAiEAAAEAgACAAAACAJAIAAUAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="tomato.ITimerState">
+    <Position X="3" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAABAEAAAAAAAAAAAIAAAIEAAAAAAAAAAA=</HashCode>
+      <FileName>ITimerState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

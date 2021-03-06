@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tomato
+﻿namespace tomato
 {
     //Interfaccia di metodi usati dal timer
     //Hanno un effetto diverso a seconda dello stato corrente (FOCUS / RELAX)
@@ -17,7 +13,7 @@ namespace tomato
             string s = "dummy string";
             return s;
         }
-        public string GetCurrentTime() 
+        public string GetCurrentTime()
         {
             string s = "dummy string";
             return s;

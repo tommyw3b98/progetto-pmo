@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace tomato
 {
-    public partial class settingsForm : Form
+    public partial class SettingsForm : Form
     {
         private readonly SettingsManager s;
-        private readonly tomatoUI mainWindow;
+        private readonly TomatoUI mainWindow;
 
-        public settingsForm(Context p, tomatoUI t)
+        public SettingsForm(Context p, TomatoUI t)
         {
             InitializeComponent();
             s = new SettingsManager(p);
@@ -34,7 +29,7 @@ namespace tomato
             this.Close();
         }
 
-        private void isCustomCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void IsCustomCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (isCustomCheckBox.Checked)
             {
@@ -48,11 +43,6 @@ namespace tomato
                 relaxCounter.Enabled = false;
                 longRelaxCounter.Enabled = false;
             }
-        }
-
-        private void settingsForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

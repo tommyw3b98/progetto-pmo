@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace tomato
 {
-    public partial class statsForm : Form
+    public partial class StatsForm : Form
     {
-        private StatsManager manager;
+        private readonly StatsManager manager;
 
-        public statsForm(StatsManager m)
+        public StatsForm(StatsManager m)
         {
             this.manager = m;
             InitializeComponent();
         }
 
-        private void statsForm_Load(object sender, EventArgs e)
+        private void StatsForm_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = manager.DataTableFromTextFile();
         }

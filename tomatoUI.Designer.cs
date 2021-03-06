@@ -1,6 +1,6 @@
 ﻿namespace tomato
 {
-    partial class tomatoUI
+    partial class TomatoUI
     {
         /// <summary>
         ///  Required designer variable.
@@ -168,7 +168,7 @@
             this.StatsButton.UseVisualStyleBackColor = true;
             this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
             // 
-            // tomatoUI
+            // TomatoUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +188,7 @@
             this.Controls.Add(this.startButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "tomatoUI";
+            this.Name = "TomatoUI";
             this.Text = "tomato 🍅";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.counter)).EndInit();

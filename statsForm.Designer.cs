@@ -1,6 +1,6 @@
 ﻿namespace tomato
 {
-    partial class statsForm
+    partial class StatsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Text = "dataGridView1";
             // 
-            // statsForm
+            // StatsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,9 +82,9 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "statsForm";
+            this.Name = "StatsForm";
             this.Text = "Stats";
-            this.Load += new System.EventHandler(this.statsForm_Load);
+            this.Load += new System.EventHandler(this.StatsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

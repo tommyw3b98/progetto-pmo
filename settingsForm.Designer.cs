@@ -1,6 +1,6 @@
 ﻿namespace tomato
 {
-    partial class settingsForm
+    partial class SettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(58, 176);
+            this.applyButton.Location = new System.Drawing.Point(94, 194);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(94, 29);
             this.applyButton.TabIndex = 2;
@@ -54,18 +54,18 @@
             // isCustomCheckBox
             // 
             this.isCustomCheckBox.AutoSize = true;
-            this.isCustomCheckBox.Location = new System.Drawing.Point(15, 12);
+            this.isCustomCheckBox.Location = new System.Drawing.Point(51, 12);
             this.isCustomCheckBox.Name = "isCustomCheckBox";
             this.isCustomCheckBox.Size = new System.Drawing.Size(181, 24);
             this.isCustomCheckBox.TabIndex = 3;
             this.isCustomCheckBox.Text = "Custom time (minutes)";
             this.isCustomCheckBox.UseVisualStyleBackColor = true;
-            this.isCustomCheckBox.CheckedChanged += new System.EventHandler(this.isCustomCheckBox_CheckedChanged);
+            this.isCustomCheckBox.CheckedChanged += new System.EventHandler(this.IsCustomCheckBox_CheckedChanged);
             // 
             // focusCounter
             // 
             this.focusCounter.Enabled = false;
-            this.focusCounter.Location = new System.Drawing.Point(140, 53);
+            this.focusCounter.Location = new System.Drawing.Point(184, 53);
             this.focusCounter.Minimum = new decimal(new int[] {
             1,
             0,
@@ -101,7 +101,7 @@
             // relaxCounter
             // 
             this.relaxCounter.Enabled = false;
-            this.relaxCounter.Location = new System.Drawing.Point(140, 95);
+            this.relaxCounter.Location = new System.Drawing.Point(184, 95);
             this.relaxCounter.Minimum = new decimal(new int[] {
             1,
             0,
@@ -119,7 +119,7 @@
             // longRelaxCounter
             // 
             this.longRelaxCounter.Enabled = false;
-            this.longRelaxCounter.Location = new System.Drawing.Point(140, 136);
+            this.longRelaxCounter.Location = new System.Drawing.Point(184, 136);
             this.longRelaxCounter.Minimum = new decimal(new int[] {
             1,
             0,
@@ -137,18 +137,17 @@
             // longRelaxTimeText
             // 
             this.longRelaxTimeText.AutoSize = true;
-            this.longRelaxTimeText.Location = new System.Drawing.Point(12, 136);
+            this.longRelaxTimeText.Location = new System.Drawing.Point(12, 143);
             this.longRelaxTimeText.Name = "longRelaxTimeText";
             this.longRelaxTimeText.Size = new System.Drawing.Size(115, 20);
             this.longRelaxTimeText.TabIndex = 7;
             this.longRelaxTimeText.Text = "Long relax time:";
             // 
-            // settingsForm
+            // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(210, 217);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(282, 253);
             this.Controls.Add(this.longRelaxTimeText);
             this.Controls.Add(this.longRelaxCounter);
             this.Controls.Add(this.relaxCounter);
@@ -158,9 +157,9 @@
             this.Controls.Add(this.isCustomCheckBox);
             this.Controls.Add(this.applyButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "settingsForm";
+            this.MaximizeBox = false;
+            this.Name = "SettingsForm";
             this.Text = "Settings";
-            this.Load += new System.EventHandler(this.settingsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.focusCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.relaxCounter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.longRelaxCounter)).EndInit();
